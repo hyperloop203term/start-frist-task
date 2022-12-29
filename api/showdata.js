@@ -7,17 +7,15 @@ var con = mysql.createConnection({
   database: "mydb"
 });
 
-//Connection
-var
-
-// connect to create DB
-
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!");
-  var sql = "CREATE TABLE users (id int primary key auto_increment, name VARCHAR(255), address VARCHAR(255))";
+  console.log("Connect and Query data from Table!");
+  var sql = "select * from users";
+
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table created");
+    console.log("Query Data from Table");
+    console.log(result);
   });
+
 });

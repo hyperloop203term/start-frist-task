@@ -1,9 +1,9 @@
 const route = require('koa-router');
 const Router = new route();
 
-Router.get('/test',async ctx => {
+Router.get('/test',async ctx => {    
+    ctx.body =   "respose from /test"
     console.log ('test path /tset');
-    ctx.body = "respose from /test"
 });
 
 Router.post('/testPOST',async ctx => {
