@@ -4,7 +4,8 @@
   "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
   "main": "(index.js) server.js",
   "scripts": {
-    "test": "git"
+    "test": "echo \"Error: no test spec\" && exit 1",
+    "start" : "nodemon index.js"
   },
   "repository": {
     "type": "git",
