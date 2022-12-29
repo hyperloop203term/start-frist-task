@@ -15,7 +15,7 @@
             const mysql = require('mysql')
             const connection = mysql.createConnection({
             host: 'localhost',
-            user: 'dbuser',
+            user: 'root',
             password: 'leothai',
             database: 'leothaidb'
             })
@@ -31,9 +31,10 @@
             connection.end()
 
   #Create Database and Table   
-   - Download XAMP and setup
-   - 
+   - Download XAMP and Setup
+   - Create Database and Security login
 
 
 
+  
 </pre>
