@@ -1,4 +1,4 @@
-#call database
+//call database
 const route = requre('koa-router');
 const Router = new route();
 const mysql = require('mysql');
