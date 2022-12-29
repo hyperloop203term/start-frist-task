@@ -1,21 +1,18 @@
-const mysql = require('../node_modules/mysql') // MySQL module
- 
-// db connection
-const db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'testdb'
-  })
- 
-// ทำการเชื่อมต่อกับฐานข้อมูล 
-db.connect((err) =>{
-    if(err){ // กรณีเกิด error
-        console.error('error connecting: ' + err.stack)
-        return
-    }
-    console.log('connected as id ' + db.threadId)
-})
+var mysql = require('./node_modules/mysql');
 
-// db.end()  for closed
-module.exports = db
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "mydb"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "CREATE TABLE users (name VARCHAR(255), address VARCHAR(255))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  });
+});
