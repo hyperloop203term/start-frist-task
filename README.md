@@ -20,23 +20,33 @@
    - Download XAMP and Setup
    - Create Database and Security login
    
-            const mysql = require('mysql')
-            const connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'leothai',
-            database: 'leothaidb'
-            })
+        const Koa =require('koa')
+        const app =new Koa();
 
-            connection.connect()
+        app.use(async ctx => {
+            ctx.body = "Hello !! Welcome to Backend Leo Page ";
+        });
 
-            connection.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
-            if (err) throw err
+        app.listen(3000);
 
-            console.log('The solution is: ', rows[0].solution)
-            })
+        var mysql = require('../start-frist-task/node_modules/mysql');
 
-            connection.end()
+        var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "mydb"
+        });
+
+        con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+        var sql = "CREATE TABLE users (name VARCHAR(255), address VARCHAR(255))";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("Table created");
+        });
+        });
  </pre>
  
        ![node-js-connect-to-mysql](https://user-images.githubusercontent.com/121533968/209926724-1deb7eaa-a910-4a5b-b38c-0f38acc2e293.jpg)
