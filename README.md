@@ -7,7 +7,7 @@
 #3. npm install 
 #4. install "body-parser"  -- > npm install body-parser
             "express"      -- > npm install express dotenv
-            "mysql"        -- > npm install mysql
+            "mysql"        -- > npm install mysql --save
 
             const mysql = require('mysql')
             const connection = mysql.createConnection({
@@ -26,5 +26,7 @@
             })
 
             connection.end()
-     
+
+  #Create Database and Table   
+  
 </pre>
