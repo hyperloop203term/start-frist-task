@@ -3,6 +3,9 @@
 
 #Nodejs-mysql-api-example
 #1. Create Config file and Update
+    - git init
+    - git config user.name "hyperloopterm2023"
+    - git config user.email "hyperloop.2023term@gmail.com"
 #2. npm init
 #3. npm install 
 #4. install "body-parser"  -- > npm install body-parser
@@ -28,5 +31,7 @@
             connection.end()
 
   #Create Database and Table   
-  
+
+
+
 </pre>
