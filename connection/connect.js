@@ -1,19 +1,11 @@
-//var mysql = require('./node_modules/mysql');
+const Koa =require('koa')
+const app =new Koa();
 
-//var con = mysql.createConnection({
-//  host: "localhost",
-//  user: "root"
-//password: "",
-//  database: "mydb"
-//});
-
-let mysql = require('./node_modules/mysql');
-let connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'leothaidb'
+app.use(async ctx => {
+    ctx.body = "Hello !! Welcome to Backend Leo Page ";
 });
+
+app.listen(3000);
 
 // connect to the MySQL server
 connection.connect(function(err) {

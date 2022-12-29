@@ -1,4 +1,13 @@
-var mysql = require('nmysql');
+const Koa =require('koa')
+const app =new Koa();
+
+app.use(async ctx => {
+    ctx.body = "Hello !! Welcome to Backend Leo Page ";
+});
+
+app.listen(3000);
+
+var mysql = require('start-frist-task/node_modules/mysql');
 
 var con = mysql.createConnection({
   host: "localhost",
