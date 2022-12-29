@@ -104,6 +104,36 @@ con.connect(function(err) {
    - Security login 
    - Route file for query data with CRUD
      >@Get
+
+  =========================
+        const express = require('express')  // module express
+        const app = express()  // create app variable is instance of express
+        const port = 3333 // port 
+
+        var mysql = require('mysql');
+
+        var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "mydb"
+        });
+
+        con.connect(function(err) {
+            if (err) throw err;
+            console.log('Connect for Get Data!');
+            
+            var name = 'leo'; 
+            var sql = 'SELECT * FROM users WHERE name = ?';
+
+            con.query(sql, [name],function(err, result){ 
+            if (err) throw err
+            console.log(result);
+            });
+            });
+
+==================================
+
      >@Post
 </pre>
 

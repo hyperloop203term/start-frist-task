@@ -1,17 +1,30 @@
-//run backend
-var conn = require("./connection/connect")
+const express = require('express')  // module express
+const app = express()  // create app variable is instance of express
+const port = 3000  // port 
 
-//---
-const Koa =require('koa')
-const app =new Koa();
+// return "Answer" when GET request from homepage
+app.get('/', function (req, res) {
+    res.send('hello world LeoThai')
+    })
 
-app.use(async ctx => {
-    //ctx.body = "Hello !! Welcome to Backend Leo Page \n";
-    //show on web page
-    ctx.body = "Happy New Year!! ";
-    //display on black screen
-    console.log("Backend run on port: 3000 ");
-});
+//call route file
+//var conn = require("../routes/routes")
+app.get('/getall',function (req, res) {
+    res.send('Get All !!')
+    })
 
-app.listen(3000);
+app.get('/getid/:id',function (req, res) {
+    res.send('Get by Id !!')
+    })    
 
+app.put('/postupdate/:id',function (req, res) {
+    res.send('Insert by Id !!')
+    })  
+
+app.delete('/postdelete/:id',function (req, res) {
+    res.send('post delete by id !!')
+    })  
+    
+app.listen(port, function() {
+    console.log(`Example app listening on port ${port}!`)
+})
