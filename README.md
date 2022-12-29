@@ -52,7 +52,8 @@
   
   ![create-with-nodejs](https://user-images.githubusercontent.com/121533968/209927515-1d4824e9-b0df-4adf-880b-87805bb46e64.jpg)
   
- <pre>
+
+<pre>
  var mysql = require('../start-frist-task/node_modules/mysql');
 
 var con = mysql.createConnection({
@@ -82,7 +83,7 @@ con.connect(function(err) {
 })
  </pre>
 
- 
+  ![node-connect-to-mysql-query-database](https://user-images.githubusercontent.com/121533968/209930277-6f30e820-3657-44c1-b0bd-4b322bc029d8.jpg)   
 
  <pre>
 
