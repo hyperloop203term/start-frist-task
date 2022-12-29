@@ -1,12 +1,3 @@
-const Koa =require('koa')
-const app =new Koa();
-
-app.use(async ctx => {
-    ctx.body = "Hello !! Welcome to Backend Leo Page ";
-});
-
-app.listen(3000);
-
 var mysql = require('../start-frist-task/node_modules/mysql');
 
 var con = mysql.createConnection({
@@ -15,7 +6,6 @@ var con = mysql.createConnection({
   password: "",
   database: "mydb"
 });
-
   
 // Connecting to database
 con.connect(function(err) {
@@ -24,7 +14,7 @@ con.connect(function(err) {
       console.log(err)
     }
     else{
-      console.log(`Database Connected`)
+      console.log(`Database Connected`)      
       con.query(`SHOW DATABASES`, 
       function (err, result) {
         if(err)
@@ -34,3 +24,4 @@ con.connect(function(err) {
       })
     }
 })
+

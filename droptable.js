@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+var mysql = require('../start-frist-task/node_modules/mysql');
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -9,13 +9,10 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connect and Query data from Table!");
-  var sql = "select * from users";
-
+  console.log("Connected!");
+  var sql = "drop TABLE users";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("--Query Data from Table");
-    console.log(result);
+    console.log("Drop Table");
   });
-
 });

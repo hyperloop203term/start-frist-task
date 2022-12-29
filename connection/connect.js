@@ -1,33 +1,22 @@
-const Koa =require('koa')
-const app =new Koa();
+var mysql = require('mysql');
 
-app.use(async ctx => {
-    ctx.body = "Hello !! Welcome to Backend Leo Page ";
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "mydb"
 });
 
-app.listen(3000);
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connect !");
+  //ar sql = "INSERT INTO `users`(`name`, `address`) VALUES ('leo','Chonburi')";
 
-// connect to the MySQL server
-connection.connect(function(err) {
-  if (err) {
-    return console.error('error: ' + err.message);
-  }
-
-  let createTodos = `create table if not exists todos(
-                          id int primary key auto_increment,
-                          title varchar(255)not null,
-                          completed tinyint(1) not null default 0
-                      )`;
-
-  connection.query(createTodos, function(err, results, fields) {
-    if (err) {
-      console.log(err.message);
-    }
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("--Insert Data to Table");
+    console.log(result);
   });
 
-  connection.end(function(err) {
-    if (err) {
-      return console.log(err.message);
-    }
-  });
 });
+
