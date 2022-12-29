@@ -1,39 +1,54 @@
-const { json } = require('body-parser');
+const express = require('express')  // module express
+const app = express()  // create app variable is instance of express
+const port = 3333 // port 
 
-const route = require('koa-router');
-const Router = new route();
+var mysql = require('mysql');
 
-Router.get('/test',async ctx => {    
-    ctx.body =   "respose from /test"
-    console.log ('test path /tset');
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "mydb"
 });
 
-Router.post('/testPOST',async ctx => {
-    let data = ctx.request.body
-    console.log (data);
-    ctx.body = data
-});
+con.connect(function(err) {
+    if (err) throw err;
+    console.log('Connect for Get Data!');
+    
+    var name = 'leo'; 
+    var sql = 'SELECT * FROM users WHERE name = ?';
 
-app.get('/user/:userId',(req,res) =>{
-    res.send('query data by id')
-});
+    con.query(sql, [name],function(err, result){ 
+    if (err) throw err
+    console.log(result);
+    });
+    });
 
-app.get ('/user',(req,res)=>{
-    res.send('query all')
-});
+//select with con
 
-app.post('/user/',(req,res)=>{
-    res.send('create user'+ JSON.stringify(req.body));
-});
+// return "Answer" when GET request from homepage
+app.get('/', function (req, res) {
+    res.send('hello world LeoThai')
+    })
 
-app.put('/user/:userId',(req,res)=>{
-    res.send('edit data',+ req.params.userID + ':' +
-    JSON.stringify(req.body))
-});
+//call route file
+//var conn = require("../routes/routes")
+app.get('/getall',function (req, res) {
+    res.send('Get All !!')
+    })
 
-app.delete('/user/:userID',(req,res)=>{
-   res.send('User delete' + req.params.userID + ':' +
-   JSON.stringify(req.body))
-});
+app.get('/getid/:id',function (req, res) {
+    res.send('Get by Id !!')
+    })    
 
-module.exports =Router
+app.put('/postupdate/:id',function (req, res) {
+    res.send('Insert by Id !!')
+    })  
+
+app.delete('/postdelete/:id',function (req, res) {
+    res.send('post delete by id !!')
+    })  
+
+app.listen(port, function() {
+        console.log(`Example app listening on port ${port}!`)
+    })    
