@@ -6,6 +6,10 @@
     - git init
     - git config user.name "hyperloopterm2023"
     - git config user.email "hyperloop.2023term@gmail.com"
+    - git Add . (All upload)
+    - git commit -m "result each time"
+    - git push origin
+
 #2. npm init
 #3. npm install 
 #4. install "body-parser"  -- > npm install body-parser
@@ -38,9 +42,10 @@
    - Koa   --> npm install koa
            --> npm install @koa/cors
            --> npm install koa-router
-           -->  npm koa-bodyparser
-   - test run result with node index.js      
-   
+           --> npm install koa-bodyparser
+   - test run result with node index.js with port : 3000
+
+
   #Create Routes.js file
    - Security login 
    - Route file for query data with CRUD
