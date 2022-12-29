@@ -16,6 +16,10 @@
             "express"      -- > npm install express dotenv
             "mysql"        -- > npm install mysql --save
              
+  #Create Database and Table   
+   - Download XAMP and Setup
+   - Create Database and Security login
+   
             const mysql = require('mysql')
             const connection = mysql.createConnection({
             host: 'localhost',
@@ -33,11 +37,7 @@
             })
 
             connection.end()
-
-  #Create Database and Table   
-   - Download XAMP and Setup
-   - Create Database and Security login
-            
+ 
 
   #Install Back-End framwork for Node.js
    - Koa   --> npm install koa
