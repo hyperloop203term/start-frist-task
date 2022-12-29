@@ -55,12 +55,8 @@
   #Create Routes.js file
    - Security login 
    - Route file for query data with CRUD
-     >@Crate
-     >@Read
-     >@Update
-     >@Delete 
-   
+     >@Get
+     >@Post
 </pre>
 
-    ![test-route-by-postman](https://user-images.githubusercontent.com/121533968/209921860-7f4c7af5-a8ac-44de-8b2a-79fc66a845c6.jpg)
 
