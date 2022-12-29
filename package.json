@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hyperloop203term/start-frist-task/issues"
   },
-  "homepage": "https://github.com/hyperloop203term/start-frist-task#readme"
+  "homepage": "https://github.com/hyperloop203term/start-frist-task#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1"
+  }
 }
