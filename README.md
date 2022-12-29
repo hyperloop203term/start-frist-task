@@ -31,6 +31,8 @@
             connection.end()
 
   #Create Database and Table   
+   - Download XAMP and setup
+   - 
 
 
 
