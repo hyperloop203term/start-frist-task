@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-express-mysql-api",
+  "version": "1.0.7",
+  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "main": "(index.js) server.js",
+  "scripts": {
+    "test": "git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperloop203term/start-frist-task.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Pannavich Ariyatanakatawong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyperloop203term/start-frist-task/issues"
+  },
+  "homepage": "https://github.com/hyperloop203term/start-frist-task#readme"
+}
