@@ -1,4 +1,4 @@
-var mysql = require('./node_modules/mysql');
+var mysql = require('nmysql');
 
 var con = mysql.createConnection({
   host: "localhost",
