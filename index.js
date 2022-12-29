@@ -1,31 +1,27 @@
-// --- This code for frist test --
+const express =require('../start-frist-task/node_modules/eexpress');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 8081;
 
-//const Koa = require('koa');
-//const app = new Koa();
+app.use(bodyParser.json());
+app.unsubscribe(bodyParser.urlencoded({extended:true}));
 
-//app.use(async ctx => {
-//ctx.body = 'Hello';
-//});
-//app.listen(3000);
+//get all
+app.get('/user/:userId',(req,res)=>{
+    res.send('show user data by id' );
+});
 
+//create user
+app.get('/user',(req,res)=>{
+    res.send('Create user data bu id ' + JSON.stringify(req.body));
+});
 
-const Koa = require('koa');
-const app = new Koa();
+//edit user
+app.put('/user/:userId',(req,res)=>{
+    res.send('edit user data by id ' + req.params.userId + ':' +JSON.stringify(req.body));
+});
 
-app.use(BodyParser()) // recieved Body Method Post
-const BodyParser = require('koa-bodyparser'); //call bodyparser for recieved body from method POST
-const cors = require('@koa/cors'); //cors used for access role
-const router = require('./routes/routes')  //call file into router valiable
-
-app.use(
-    cors({ //role define for Cross-Origin Resource Sharing(CORS)
-        origin: '*',
-        allowMethods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'PATCH'],
-        exposeHeaders: ['X-Request-Id'],
-    }),
-)
-
-app.use(router.routes()) // call app tigger router
-
-console.log("App Start Port 3000")
-app.listen(3000);
+//delete
+app.delete('/user/:userId',(req,res)=>{
+    res.send('delete user data by id ');
+});
