@@ -15,6 +15,9 @@
 #4. install "body-parser"  -- > npm install body-parser
             "express"      -- > npm install express dotenv
             "mysql"        -- > npm install mysql --save
+             
+            ![xamp](https://user-images.githubusercontent.com/121533968/209906213-01c08fb4-18d3-46da-8bd1-9c38f222a458.png)
+            ![send result to port-3000](https://user-images.githubusercontent.com/121533968/209906230-bac5f214-36ff-4fe6-b7e8-d84bdf27c23c.png)
 
             const mysql = require('mysql')
             const connection = mysql.createConnection({
@@ -37,7 +40,8 @@
   #Create Database and Table   
    - Download XAMP and Setup
    - Create Database and Security login
-  
+            ![xamp](https://user-images.githubusercontent.com/121533968/209906257-6fd75afd-c011-4de9-b144-a0c3114d559d.png)
+
   #Install Back-End framwork for Node.js
    - Koa   --> npm install koa
            --> npm install @koa/cors
