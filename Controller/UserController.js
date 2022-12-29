@@ -1,7 +1,10 @@
 var express = require('express');
+
 var router = express.Router();
 var sql = require("mysql");
 var app = express();
+
+//Database Connection
 var conn = require("../connection/connect")
 
 //show all Users
@@ -51,7 +54,9 @@ router.post('/api/User',(req, res) => {
     });
   });
 
-  module.exports = router;var express = require('express');
+module.exports = router;
+
+var express = require('express');
 var router = express.Router();
 var sql = require("mysql");
 var app = express();
