@@ -38,9 +38,11 @@
 
             connection.end()
  </pre>
+  
+  
+  ![create-with-nodejs](https://user-images.githubusercontent.com/121533968/209927515-1d4824e9-b0df-4adf-880b-87805bb46e64.jpg)
+  
  
-       ![node-js-connect-to-mysql](https://user-images.githubusercontent.com/121533968/209926724-1deb7eaa-a910-4a5b-b38c-0f38acc2e293.jpg)
-
  <pre>
 
   #Install Back-End framwork for Node.js
