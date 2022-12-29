@@ -36,7 +36,10 @@
   
   #Install Back-End framwork for Node.js
    - Koa   --> npm install koa
-  
+           --> npm install @koa/cors
+           --> npm install koa-router
+           -->  npm koa-bodyparser
+           
   #Create Routes.js file
    - Security login 
    - Route file for query data with CRUD
