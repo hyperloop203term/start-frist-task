@@ -34,7 +34,14 @@
    - Download XAMP and Setup
    - Create Database and Security login
 
-
+  #Create Routes.js file
+   - Security login 
+   - Route file for query data with CRUD
+     >@Crate
+     >@Read
+     >@Update
+     >@Delete 
+    
 
   
 </pre>
