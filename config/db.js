@@ -14,8 +14,8 @@ con.connect(function(err) {
 
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Query Data from Table Users");
-    console.log(result);
+    console.log("Connection");
+    //console.log(result);
   });
 
 });

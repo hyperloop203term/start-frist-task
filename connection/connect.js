@@ -7,16 +7,16 @@ var con = mysql.createConnection({
   database: "mydb"
 });
 
+
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connect !");
-  var sql = "INSERT INTO `users`(`name`, `address`) VALUES ('nipon','chantaburi')";
-
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("--Insert Data to Table");
-    console.log(result);
-  });
+  console.log("Database Connection");
+  
+  //var sql = "INSERT INTO `users`(`name`, `address`) VALUES ('neo','bangkok')";
+  //con.query(sql, function (err, result) {
+  //  if (err) throw err;
+  //  console.log("--Insert Data to Table");
+  //  console.log(result);
+  //});
 
 });
-
