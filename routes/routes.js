@@ -4,7 +4,7 @@ const port = 3333 // port
 const Router = express.Router();
 
 var mysql = require('mysql');
-const router = require('../Controller/UserController');
+const router = require('../controller/usercontroller');
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -22,7 +22,13 @@ con.connect(function(err) {
 
     con.query(sql, [name],function(err, result){ 
     if (err) throw err    
+       
+       //resulte form DB table
        console.log(result);
+       //pass trougth JSON format prepare send to HTTP on browser
+       var peopleJSON = JSON.stringify(result); 
+       console.log(peopleJSON);
+
     });
   });
 
