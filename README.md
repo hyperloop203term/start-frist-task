@@ -203,5 +203,5 @@ app.listen(port, function() {
     })    
 </pre>
 
-![prepare json format file](https://user-images.githubusercontent.com/121533968/210027471-d0a68f7a-9c91-4d5c-98ba-fa1e02bf790e.jpg)
+![prepare-json-file-format](https://user-images.githubusercontent.com/121533968/210028020-838d12c1-8303-4a13-8610-78db9bc38d16.jpg)
 
