@@ -134,7 +134,6 @@ con.connect(function(err) {
 
 ==================================
 
-     >@Post
 </pre>
 
    ![test-route-by-postman](https://user-images.githubusercontent.com/121533968/209923960-91581d59-1020-4bad-8e15-14488aab8862.jpg)
@@ -206,9 +205,95 @@ app.listen(port, function() {
 ![prepare-json-file-format](https://user-images.githubusercontent.com/121533968/210028020-838d12c1-8303-4a13-8610-78db9bc38d16.jpg)
 
 
+
 <pre>
 REST API with Node.js, Express, and MySQL for Web Browser
 Config file create
-1. Connect DB
-2. 
-</>
+1. Install Node Module --> npm install mysql2 for use middleware
+2. Prepare environment file
+   2.1 Create services file for 
+   2.2 control database schema, 
+   2.3 middleware , and
+   2.4 database security
+</pre>
+
+![get-JSON-file-toBrowser](https://user-images.githubusercontent.com/121533968/210051507-c6c6fb9e-243e-4b88-9feb-7c54bdb39cc2.jpg)
+
+<pre>
+2.1  Service file
+const db = require('./db');
+const helper = require('../middleware/helper');
+const config = require('../config/config');
+
+async function getMultiple(page = 1){
+  const offset = helper.getOffset(page, config.listPerPage);
+
+  const rows = await db.query(
+    `SELECT id, name, address
+     FROM users LIMIT ${offset},${config.listPerPage}`
+  );
+  
+  const data = helper.emptyOrRows(rows);
+  const meta = {page};
+
+  return {
+    data,
+    meta
+  }
+}
+
+module.exports = {
+  getMultiple
+}
+
+2.2 control database schema,  
+//for recheck shemma and define format between client and database
+const mysql = require('mysql2/promise');
+const config = require('../config/config');
+
+async function query(sql, params) {
+  const connection = await mysql.createConnection(config.db);
+  const [results, ] = await connection.execute(sql, params);
+
+  return results;
+}
+
+module.exports = {
+  query
+}
+
+2.3 
+function getOffset(currentPage = 1, listPerPage) {
+    return (currentPage - 1) * [listPerPage];
+  }
+  
+  function emptyOrRows(rows) {
+    if (!rows) {
+      return [];
+    }
+    return rows;
+  }
+  
+  module.exports = {
+    getOffset,
+    emptyOrRows
+  }
+  
+  2.4 Connect Database
+  const config = {
+    db: {
+      /* don't expose password or any sensitive info, done only for demo */
+      host: "localhost",
+      user: "root",
+      password: "",
+      database: "mydb",
+    },
+    listPerPage: 10,
+  };
+  module.exports = config;
+  
+</pre>
+
+Check Result from Browser and Posman with  : http://localhost:3333/listusers
+
+![check-data-from-postman](https://user-images.githubusercontent.com/121533968/210052812-a8f526fd-ff61-4690-90fd-55ee47e4c671.jpg)
