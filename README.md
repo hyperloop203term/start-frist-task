@@ -262,7 +262,7 @@ module.exports = {
   query
 }
 
-2.3 
+2.3 Data Offset for return to JSON format
 function getOffset(currentPage = 1, listPerPage) {
     return (currentPage - 1) * [listPerPage];
   }
