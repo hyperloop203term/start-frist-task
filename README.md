@@ -219,6 +219,7 @@ Config file create
 
 ![get-JSON-file-toBrowser](https://user-images.githubusercontent.com/121533968/210051507-c6c6fb9e-243e-4b88-9feb-7c54bdb39cc2.jpg)
 
+<pre>
 2.1  Service file
 const db = require('./db');
 const helper = require('../middleware/helper');
@@ -291,3 +292,8 @@ function getOffset(currentPage = 1, listPerPage) {
   };
   module.exports = config;
   
+</pre>
+
+Check Result from Browser and Posman with  : http://localhost:3333/listusers
+
+![check-data-from-postman](https://user-images.githubusercontent.com/121533968/210052812-a8f526fd-ff61-4690-90fd-55ee47e4c671.jpg)
