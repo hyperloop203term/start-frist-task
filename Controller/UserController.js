@@ -12,15 +12,11 @@ var router     = express.Router();
 //const express = require('express')
 const app = express()
 
-app.get('/hi', (req, res) => {
-    res.send('Hello, World!')
-    })
-
-app.listen(8085, 'localhost')
-
-
+//app.listen(8085, 'localhost')
 //show all Users
 router.get('/api/Users',(req, res) => {
+    console.log('Start with user controller')
+
     let sql = "SELECT * FROM users";
     let query   = conn.query(sql, (err, results) => {
       if(err) throw err;
@@ -34,7 +30,7 @@ router.post('/api/User',(req, res) => {
     let sql = "INSERT INTO users SET ?";
     let query = conn.query(sql, data,(err, results) => {
       if(err) throw err;
-      res.send(JSON.stringify(query));
+      res.send(JSON.stringify(results));
     });
   });
    
@@ -44,7 +40,7 @@ router.post('/api/User',(req, res) => {
     let query = conn.query(sql, (err, results) => {
       //  console.log(req.query)
       if(err) throw err;
-      res.send(JSON.stringify(query));
+      res.send(JSON.stringify(results));
     });
   });
    
@@ -53,7 +49,7 @@ router.post('/api/User',(req, res) => {
     let sql = "DELETE FROM users WHERE id="+req.params.id;
     let query = conn.query(sql, (err, results) => {
       if(err) throw err;
-        res.send(JSON.stringify(query));
+        res.send(JSON.stringify(results));
     });
   });
   
@@ -62,7 +58,7 @@ router.post('/api/User',(req, res) => {
     let sql = "SELECT * FROM users WHERE id="+req.params.id;
     let query = conn.query(sql, (err, results) => {
       if(err) throw err;
-      res.send(JSON.stringify(query));
+      res.send(JSON.stringify(results));
     });
   });
 

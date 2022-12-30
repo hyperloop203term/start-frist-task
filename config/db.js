@@ -47,5 +47,5 @@ con.connect(function(err) {
           console.log("Result Database Name : ",result) 
       })
     }
-})
+});
  
