@@ -297,3 +297,45 @@ function getOffset(currentPage = 1, listPerPage) {
 Check Result from Browser and Posman with  : http://localhost:3333/listusers
 
 ![check-data-from-postman](https://user-images.githubusercontent.com/121533968/210052812-a8f526fd-ff61-4690-90fd-55ee47e4c671.jpg)
+
+<pre>
+=== package.json ===
+{
+  "name": "nodejs-express-mysql-api",
+  "version": "1.0.7",
+  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "main": "(index.js) server.js",
+  "scripts": {
+    "test": "echo \"Error: no test spec\" && exit 1",
+    "start": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperloop203term/start-frist-task.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Pannavich Ariyatanakatawong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyperloop203term/start-frist-task/issues"
+  },
+  "homepage": "https://github.com/hyperloop203term/start-frist-task#readme",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^12.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20"
+  }
+}
+========================= finished ===================================
+
+</pre>
