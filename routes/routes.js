@@ -25,11 +25,13 @@ con.connect(function(err) {
        
        //resulte form DB table
        console.log(result);
+
        //pass trougth JSON format prepare send to HTTP on browser
+       //check data log
        var peopleJSON = JSON.stringify(result); 
        console.log(peopleJSON);
 
-    });
+    }); 
   });
 
 
