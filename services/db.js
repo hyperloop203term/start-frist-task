@@ -1,3 +1,4 @@
+//for recheck shemma and define format between client and database
 const mysql = require('mysql2/promise');
 const config = require('../config/config');
 
